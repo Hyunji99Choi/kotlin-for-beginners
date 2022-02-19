@@ -21,16 +21,20 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-        var now = 9
-        when(now) {
-           in 10..19 -> {
-               Log.d("BasicSyntax"," 현재시간은 ㅇㅇ")
-           }
+        var stringArray = Array(10,{item->""})
+        Log.d("BasicSyntax"," 현재시간은 ${stringArray.get(1)}")
 
-            else -> {
-                Log.d("BasicSyntax"," 현재시간은 ㄴㄴ")
-            }
+
+        var set = mutableSetOf<String>()
+        set.add("aid")
+        set.add("bid")
+
+        var map = mutableMapOf<String,String>()
+        Log.d("BasicSyntax"," map ${map.get("key")}")
+
+        for(index in 10 downTo 0){
+            Log.d("BasicSyntax"," index = ${index}")
         }
-
     }
 }
+
