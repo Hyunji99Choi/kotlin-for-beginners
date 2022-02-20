@@ -7,10 +7,13 @@ import android.view.LayoutInflater
 import com.example.kotlin_for_beginners.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
+
+    val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityMainBinding.inflate(layoutInflater)
+        //val binding = ActivityMainBinding.inflate(layoutInflater)
         //어떻게 메인액티비티와 연결되는가,, 전부 연결되는거 아님?
         setContentView(binding.root)
 
