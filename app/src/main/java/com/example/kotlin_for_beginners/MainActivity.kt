@@ -1,9 +1,16 @@
 package com.example.kotlin_for_beginners
 
+import android.R
+import android.bluetooth.BluetoothAdapter
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
+import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
+import android.widget.Toast
 import com.example.kotlin_for_beginners.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -18,9 +25,37 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
 
+        //스피너
+        var data = listOf("- 선택하세요 -","1월","2월","3월","4월","5월","6월")
+        var adapter = ArrayAdapter<String>(this, R.layout.simple_list_item_1,data)
+        binding.spinner.adapter = adapter
+        binding.spinner.onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>?, view: View?, position: Int, id: Long) {
+                binding.textSay.text = data.get(position)
+            }
+
+            override fun onNothingSelected(parent: AdapterView<*>?) {
+                TODO("Not yet implemented")
+            }
+
+        }
+
+        //bluetooth
+        val bluetoothAdapter : BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
+        if(bluetoothAdapter == null){
+            Toast.makeText(this,"Bluetooth is not available",Toast.LENGTH_LONG).show();
+        }
+
+
         //뷰바인딩 변수.id
         binding.btnSay.setOnClickListener {
             binding.textSay.text = "Hello Kotlin!!"
+
+        if(bluetoothAdapter?.isEnabled == false){
+            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+
+        }
+
         }
 
 
