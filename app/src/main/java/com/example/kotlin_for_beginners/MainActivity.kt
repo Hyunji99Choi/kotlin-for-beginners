@@ -46,6 +46,10 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Bluetooth is not available",Toast.LENGTH_LONG).show();
         }
 
+        binding.nextBtn.setOnClickListener{
+            val intent = Intent(this,MainRecyclerView::class.java)
+            startActivity(intent)
+        }
 
         //뷰바인딩 변수.id
         binding.btnSay.setOnClickListener {
