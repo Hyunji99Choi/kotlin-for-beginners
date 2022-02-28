@@ -35,7 +35,7 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onNothingSelected(parent: AdapterView<*>?) {
-                TODO("Not yet implemented")
+
             }
 
         }
@@ -55,10 +55,10 @@ class MainActivity : AppCompatActivity() {
         binding.btnSay.setOnClickListener {
             binding.textSay.text = "Hello Kotlin!!"
 
-        if(bluetoothAdapter?.isEnabled == false){
-            val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
+            if(bluetoothAdapter?.isEnabled == false){
+                val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
 
-        }
+            }
 
         }
 
