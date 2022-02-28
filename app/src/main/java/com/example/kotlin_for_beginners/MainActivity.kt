@@ -50,6 +50,10 @@ class MainActivity : AppCompatActivity() {
             val intent = Intent(this,MainRecyclerView::class.java)
             startActivity(intent)
         }
+        binding.nextBtn2.setOnClickListener {
+            val intent = Intent(this,MainFragment::class.java)
+            startActivity(intent)
+        }
 
         //뷰바인딩 변수.id
         binding.btnSay.setOnClickListener {
