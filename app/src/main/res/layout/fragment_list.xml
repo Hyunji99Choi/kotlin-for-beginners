@@ -20,4 +20,21 @@
         android:text="NEXT"
         android:layout_marginTop="10dp"/>
 
+
+    <TextView
+        android:id="@+id/textTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textTitle"/>
+    <TextView
+        android:id="@+id/textValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textValue"/>
+    <TextView
+        android:id="@+id/textFromActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="textFromActivity"/>
+
 </androidx.appcompat.widget.LinearLayoutCompat>
