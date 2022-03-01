@@ -46,12 +46,23 @@ class MainActivity : AppCompatActivity() {
             Toast.makeText(this,"Bluetooth is not available",Toast.LENGTH_LONG).show();
         }
 
+
+
+        //btn event
         binding.nextBtn.setOnClickListener{
             val intent = Intent(this,MainRecyclerView::class.java)
             startActivity(intent)
         }
         binding.nextBtn2.setOnClickListener {
             val intent = Intent(this,MainFragment::class.java)
+            startActivity(intent)
+        }
+        binding.viewpageBtn.setOnClickListener{
+            val intent = Intent(this,MainViewpagerActivity::class.java)
+            startActivity(intent)
+        }
+        binding.viewpageBtn2.setOnClickListener{
+            val intent = Intent(this,MainViewpagerActivity2::class.java)
             startActivity(intent)
         }
 
