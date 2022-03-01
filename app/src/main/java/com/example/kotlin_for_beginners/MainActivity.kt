@@ -11,6 +11,7 @@ import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import com.example.kotlin_for_beginners.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -40,13 +41,16 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        //bluetooth
-        val bluetoothAdapter : BluetoothAdapter? = BluetoothAdapter.getDefaultAdapter()
-        if(bluetoothAdapter == null){
-            Toast.makeText(this,"Bluetooth is not available",Toast.LENGTH_LONG).show();
+        //bluetooth 사용할 수 있는지 여부 확인
+        binding.blueBtn.setOnClickListener{
+            val intent = Intent(this,MainBluetoothActivity::class.java)
+            startActivity(intent)
         }
 
-
+        //뷰바인딩 변수.id
+        binding.btnSay.setOnClickListener {
+            binding.textSay.text = "Hello Kotlin!!"
+        }
 
         //btn event
         binding.nextBtn.setOnClickListener{
@@ -66,16 +70,7 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        //뷰바인딩 변수.id
-        binding.btnSay.setOnClickListener {
-            binding.textSay.text = "Hello Kotlin!!"
 
-            if(bluetoothAdapter?.isEnabled == false){
-                val enableBtIntent = Intent(BluetoothAdapter.ACTION_REQUEST_ENABLE)
-
-            }
-
-        }
 
 
         var stringArray = Array(10,{item->""})
